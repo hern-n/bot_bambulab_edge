@@ -1,0 +1,26 @@
+{
+    "initial_waiting_time": 3,
+    "waiting_time": 1.5,
+    
+    "special": {
+        "write_email": [3, 10],
+        "write_things": {
+            "5": "Hola123#",
+            "11": "Hola123#",
+            "16": "cuqui_diseñator"
+        },
+        "write_code": [6],
+        "human": [9],
+        "scroll": [12],
+        "away_downloads": [20, 23, 26, 28, 31, 33]
+    },
+
+    "more_time": [12, 15, 16, 20, 26, 31, 37],
+
+    "coordenates": {
+        "16": [624, 164],
+        "19": [938, 743],
+        "25": [1290, 750],
+        "30": [1562, 758]
+    }
+}
