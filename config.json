@@ -11,8 +11,9 @@
         },
         "write_code": [6],
         "human": [9],
+        "wait_downloads": [23, 38, 33],
         "scroll": [12],
-        "away_downloads": [20, 23, 26, 28, 31, 33]
+        "away_downloads": [20, 26, 31]
     },
 
     "more_time": [12, 15, 16, 20, 26, 31, 37],

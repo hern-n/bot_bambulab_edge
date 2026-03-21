@@ -16,11 +16,14 @@ import logging
 import os
 import sys
 import time
+import os
+import keyboard
+
+
 
 import scanner
 import mouse
 import agentmail_client
-import keyboard
 
 logger = logging.getLogger(__name__)
 
@@ -28,6 +31,7 @@ logger = logging.getLogger(__name__)
 # Contador global para rastrear el elemento actual a procesar
 current_element_number = 0
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def load_json(file_path: str) -> dict:
     """Carga un archivo JSON y lo devuelve como un diccionario de Python."""
@@ -35,7 +39,7 @@ def load_json(file_path: str) -> dict:
         return json.load(f)
 
 
-data = load_json("config.json")
+data = load_json(os.path.join(BASE_DIR, "..", "config.json"))
 
 # Tiempo de espera entre acciones para asegurar carga completa de la interfaz
 waiting_time = data["waiting_time"]
@@ -131,6 +135,9 @@ def main():
 
     elif current_element_number in special["human"]:
         mouse.wait_for_human(f"elements/{current_element_number}.png")
+
+    elif current_element_number in special["wait_downloads"]:
+        mouse.wait_for_download(f"elements/{current_element_number}.png")
 
     elif current_element_number in special["scroll"]:
         time.sleep(4)
