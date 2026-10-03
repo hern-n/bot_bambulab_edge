@@ -1,0 +1,20 @@
+name: BambuLab Bot
+description: >-
+  Python GUI automation bot using computer vision (OpenCV) and mouse automation (pyautogui) for screen interaction with
+  graphical interfaces.
+author: Hernan
+technologies:
+  - Python
+  - OpenCV
+  - PyAutoGUI
+  - pytest
+repository: https://github.com/hern-n/bot_bambulab.git
+license: MIT
+tags:
+  - bot
+  - automation
+  - gui
+  - computer-vision
+  - opencv
+  - python
+lastModified: '2026-07-02T12:28:24.500Z'
