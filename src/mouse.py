@@ -200,3 +200,35 @@ def wait_for_human(image_model) -> None:
             sys.exit()
 
         time.sleep(0.1)
+
+
+def wait_for_download(image_model) -> None:
+    """
+    Waits until the file is alreade downloaded.
+    """
+
+    logger.info("Waiting...")
+
+    timeout = 40
+    start_time = time.time()
+
+    while True:
+
+        # Si se detecta que ya no est├í en la pantalla de CAPTCHA
+        scanner.clear_screenshots()
+        scanner.scan()
+
+        in_captcha_yet = scanner.image_exists("screenshots/1.png", image_model, 0.99)
+
+        if not in_captcha_yet:
+            logger.info("Exit the captcha screen.")
+            time.sleep(0.3)
+            return
+
+        # Si pasan 25 segundos
+        if time.time() - start_time > timeout:
+            logger.info("Timeout reached (40s), exit program")
+            winsound.MessageBeep(winsound.MB_OK)
+            sys.exit()
+
+        time.sleep(0.1)  # evita consumir CPU

@@ -239,3 +239,6 @@ temp/
 
 # OpenCode
 .opencode/
+
+# Screenshots - ignorar contenido
+screenshots/*

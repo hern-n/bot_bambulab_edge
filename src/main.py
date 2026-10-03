@@ -137,6 +137,9 @@ def main():
     elif current_element_number in special["human"]:
         mouse.wait_for_human(f"elements/{current_element_number}.png")
 
+    elif current_element_number in special["wait_downloads"]:
+        mouse.wait_for_download(f"elements/{current_element_number}.png")
+
     elif current_element_number in special["scroll"]:
         time.sleep(4)
         mouse.scroll_down()
